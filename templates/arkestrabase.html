@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		{% block title %}
+			<title>Arkestra - A Django-based web content management for large and small organisations</title>
+		{% endblock title %}
+		
+		{% block metatags %}
+			<meta name="description" content="Arkestra is an efficient and flexible Django-based web CMS for large and small organisations." />
+			<meta name="keywords" content="Divio, Cardiff University School of Medicine" />
+		{% endblock metatags %}
+		
+		{% block links %}
+		{% endblock links %}
+	</head>
+	<body>
+	{% block container %}
+		<div id="container">
+			{% block menu %}
+				<ul class="menu">
+					<li class="menu_item"><a href="http://www.aikidocardiff.com" title="Practise Aikido in Cardiff with a friendly club - beginners and visitors are always welcome">home</a>    </li>
+					<li class="menu_item"><a href="http://www.aikidocardiff.com/pages/where-when.php" title="We practice at Chapter Arts Centre and other venues">where &amp; when</a>    </li>
+					<li class="menu_item"><a href="http://www.aikidocardiff.com/pages/courses.php" title="We regularly host Aikido courses in Cardiff, and attend courses hosted by other clubs ">courses</a>    </li>
+					<li class="menu_item"><a href="http://www.aikidocardiff.com/pages/contact-us.php" title="Please get in touch by phone or email with any enquiries">contact us</a>    </li>
+					<li class="menu_item"><a href="http://aikidocardiff.com/weblog/" title="">articles</a>    </li>
+					<li class="menu_item"><a href="http://www.aikidocardiff.com/pages/photos.php" title="Aikido photographs">photos</a>    </li>
+				</ul>
+			{% endblock menu %}
+			
+			{% block main %}
+				<div id="main" class="has_sidebar">
+					{% block pagetitle %}
+						<h1>Arkestra - A Django-based web content management for large and small organisations</h1> 
+					{% endblock pagetitle %}
+					
+					{% block main_page_body %}
+						<div class="main">
+							<p><em>Arkestra</em> is a bundle of integrated Django applications.</p>
+							<h2>About the club</h2>
+							<p><img src="/media/grading300.jpg" alt="" class="dojo" />We are based at <a href="http://www.chapter.org">Chapter Arts Centre</a>, Canton. Our close association with other Cardiff clubs means that our members also practise regularly at other venues in the city.</p>
+							
+							<p><em>Fudoshin Aikido</em> has members from a dozen or more different countries. Our members include people in their teens and their 70s, who have been practising a few weeks or several decades. We are an inclusive club.</p>
+							
+							<p>Our regular instructors are David Dimmick and Ian Llewelyn, both experienced Aikidoka and thoughtful teachers.</p>
+							
+							<p><em>Fudoshin Aikido</em> benefits from its associations with other Aikido organisations. We are affiliated to <a href="http://www.bathaikido.pwp.blueyonder.co.uk/index.html">Furo Ryo Aikido</a> (Bath Aikido Society) and the <a href="http://www.bab.org.uk/">British Aikido Board</a> (Aikido's governing body in the UK). Our members regularly attend  courses hosted by other clubs, and enjoy many opportunities to practise under instructors of international standing (including such luminaries of the Aikido world as Senseis Tamura, Yamada, Benedetti, Voarino, Shewan and Yamashima) both here and abroad.</p>
+						</div>	
+					{% endblock main_page_body %}
+		
+					{% block sidebar %}
+						<div class="sidebar"><h2>Forthcoming courses</h2>
+							<h3>Cath Davies (UKA 5th Dan Shidoin)</h3>
+							<p>In association with Sho-bu-kan Aikido Cardiff.</p>
+							<dl> <dt>Saturday 31st October</dt>
+							<dd>3pm - 6pm, Talybont Sports Centre, &pound;10</dd>
+							<dt>Sunday 1st November</dt>
+							<dd>10am- 2pm, Sully Judo club dojo, &pound;10</dd>
+							</dl>
+							
+							<h3>Paul Mitton, Bath Furo Ryu Aikido</h3>
+							<p>Date in November to be confirmed</h3>
+							
+							<h3>Stephane Benedetti</h3>
+							<p>December 5th-6th, details to be confirmed</p></div>			
+						</div>	
+					{% endblock sidebar %}
+			
+					{% block footer %}
+						<div id="footer">Aikido - your chance to do something you will never understand.</div>
+					{% endblock footer %}
+			
+				</div>
+			{% endblock main %}
+		
+			{% block google-analytics %}
+				<script type="text/javascript">
+				var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+				document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+				</script>
+				<script type="text/javascript">
+				var pageTracker = _gat._getTracker("UA-4662652-2");
+				pageTracker._trackPageview();
+				</script>
+			{% endblock google-analytics %}
+		{% endblock container %}
+	</body>
+</html>

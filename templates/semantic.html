@@ -1,0 +1,16 @@
+{% load cache cms_tags %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ lang }}" xml:lang="{{ lang }}" >
+<head>
+<title>{% page_attribute page_title %}</title>
+<link href="/media/css//semanticeditor/semanticpresentation.css" rel="stylesheet" type="text/css" title="Default" media="screen" />
+<link href="/media/css/typography.css" rel="stylesheet" type="text/css" title="Default" media="screen" />
+
+</head>
+
+<body>
+{% placeholder body %}
+</body>
+</html>

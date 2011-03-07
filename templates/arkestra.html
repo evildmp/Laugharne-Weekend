@@ -1,0 +1,55 @@
+{% load cache cms_tags %}
+{% load typogrify %}
+{% load humanize %}
+
+{% block html %}
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	{% block head %}
+		<head>
+			<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+			<meta name="description" content="{% page_attribute meta_description %}"/>
+	
+			{% block title %}
+				<title>{% page_attribute title %}</title>
+			{% endblock %}
+
+			{% block styles %}
+				<link href="/media/css/arkestra.css" rel="stylesheet" type="text/css" media="screen" title="default stylesheet" />
+				<link href="/media/css/carousel.css" rel="stylesheet" type="text/css" />
+				<!--[if IE]><link href="/media/css/ie-fixes/ie.css" rel="stylesheet" type="text/css" /><![endif]--> 
+				<!--[if IE 8]><link href="/media/css/ie-fixes/ie8.css" rel="stylesheet" type="text/css" /><![endif]--> 
+				<!--[if IE 7]><link href="/media/css/ie-fixes/ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
+				<!--[if lt IE 7]><link href="/media/css/ie-fixes/ie6.css" rel="stylesheet" type="text/css" /><![endif]--> 
+			{% endblock styles %}
+			{% block scripts %}
+			{% endblock scripts %}
+			
+		</head>
+	{% endblock head %}
+
+	{% block body %}
+		<body  {% block body_attributes %}{% endblock body_attributes %}>
+	        {% block pagetitle %}
+				{% if not current_page.flags.no_page_title %}
+		           	{% filter typogrify %}<h1>{% page_attribute title %}</h1>{% endfilter %}
+				{% endif %}
+	        {% endblock pagetitle %}
+
+			{% block main_page_body %}
+				{% placeholder body %}
+			{% endblock main_page_body %}
+
+			{% block menu %}
+				<ul class="menu">
+					{% show_menu 0 100 0 1 "cms/arkestra_menu.html" %}
+				</ul>
+			{% endblock menu %}
+
+			{% block sidebar %}
+			{% endblock sidebar %}
+		</body>
+	{% endblock body %}
+	</html>
+{% endblock html %}

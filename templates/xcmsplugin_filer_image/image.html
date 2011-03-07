@@ -1,0 +1,6 @@
+{% load thumbnail %}<span class = "image {{object.float}}"><img alt="{% if object.alt %}{{ object.alt }}{% endif %}" class="plugin" src="{% thumbnail object.image image_size crop,upscale %}" />
+	{% if object.caption %}<span style="width: {{caption_width}}px" class="image_caption">{{ object.caption }}</span>{% endif %}
+	{% if object.show_author %}
+	    <span class="image_author">(Author: {{ object.image.author }})</span>
+	{% endif %}
+</span>

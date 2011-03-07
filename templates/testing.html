@@ -1,0 +1,35 @@
+{% load cache cms_tags %}
+{% load news_and_events_tags %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ lang }}" xml:lang="{{ lang }}" >
+<head>
+
+<title>{% page_attribute page_title %}</title>
+
+<style>
+    body {font-family: "gill sans", "optima";}
+    dt {color: gray;}    
+    h1 {font-size: 120%;}
+    dl {border: 1px solid gray; margin: 1em; padding: 1em; background: #cef; width: 50%;}
+	.explanation {color: red; font-style: italic;}
+</style>    
+
+
+</head>
+
+<body>
+
+<dl>
+	<dt>language chooser</dt>
+	<dd>{% language_chooser %}</dd>
+	<dt>test</dt>
+	<dd>{% test %}</dd>
+	<dt>placeholder body</dt>
+	<dd>{% placeholder body %}</dd>
+	<dt>show menu</dt>
+	<dd><ul>{% show_menu 0 100 0 1 "cms/menu.html" %}</ul></dd>
+</dl>
+</body>
+</html>

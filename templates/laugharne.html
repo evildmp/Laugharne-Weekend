@@ -1,0 +1,72 @@
+{% load cache cms_tags link_tags menu_tags typogrify %}{% block doctype %}<!DOCTYPE html>{% endblock doctype %} 
+{% block html %}
+	<html lang="en" >
+{% endblock html %}
+
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+
+{% block meta %}<meta name="description" content="{% page_attribute meta_description %}"/>{% endblock meta %}
+
+{% block title %}<title>{% page_attribute title %}</title>{% endblock %}
+
+{% block styles %}
+	<style media="screen" type="text/css"><!--
+
+			@import url("/media/css/arkestra.css");
+			@import url("/media/css/temporaryhacks.css");
+       		@import url("/media/css/carousel.css");
+			@import url("/media/css/laugharne.css");
+
+		--></style>
+	
+  <!--[if IE]><link href="/media/css/ie-fixes/ie.css" rel="stylesheet" type="text/css" /><![endif]--> 
+  <!--[if IE 8]><link href="/media/css/ie-fixes/ie8.css" rel="stylesheet" type="text/css" /><![endif]--> 
+  <!--[if IE 7]><link href="/media/css/ie-fixes/ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if lt IE 7]><link href="/media/css/ie-fixes/ie6.css" rel="stylesheet" type="text/css" /><![endif]--> 
+
+{% block extrastyles %}
+{% endblock extrastyles %}
+<script type="text/javascript" src="/media/cms/js/lib/jquery.js"></script>
+{% endblock styles %}
+
+</head>
+
+{% block body %}<body>{% endblock body %}
+    
+<div id="outer-wrapper">
+
+	<a class="logo" style="text-decoration: none; border: none;" href="/"><img src="/media/images/banner.jpg" alt="home" /></a>
+
+	<div id="inner-wrapper">
+		{% block menu %}<ul class= "menu">{% show_menu 0 100 100 100 "cms/arkestra_menu.html" "" "" %}</ul>{% endblock menu %}
+
+	   	{% block title_body_and_sub %}
+   	
+			{% block main_page_body %}
+		   		{% placeholder body %}
+		  	{% endblock main_page_body %}
+      
+			<div class = "footer row columns3">
+				<div class = "column firstcolumn">
+		  	    <a href = "http://academi.org/"><img src = "/media/images/academilogo.gif" alt = "Sponsored by Academi" /></a>
+				</div>
+				<div class = "column">
+		  	    <a href = "http://artswales.org.uk/"><img src = "/media/images/artscouncil.gif" alt = "Sponsored by the Arts Council of Wales" /></a>
+				</div>
+				<div class = "column lastcolumn">
+		  	    <a href = "http://www.carmarthenshire.gov.uk/"><img class="right" src = "/media/images/carmarthen.gif" alt = "Sponsored by  Carmarthenshire County Council" /></a>
+
+				</div>
+		  	</div>
+	    {% endblock title_body_and_sub %}
+
+		{% block horizontal_navigation %}{% endblock horizontal_navigation %}
+
+	</div>
+</div>		
+
+
+</body>
+</html>
+
